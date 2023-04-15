@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "48412938679",
+    "project_id": "flutter-app-fiap",
+    "storage_bucket": "flutter-app-fiap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48412938679:android:061c87e6815173a2e1d832",
+        "android_client_info": {
+          "package_name": "com.fiap.flutter_app_fiap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48412938679-64m3mjqcd3tg3aqk7drvjh4f0i2fgsp2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0Z9bGR6BLIpv44WXxU3h5H_-TJzVDE5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48412938679-64m3mjqcd3tg3aqk7drvjh4f0i2fgsp2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
