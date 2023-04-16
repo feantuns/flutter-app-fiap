@@ -1,8 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fiap/screens/home/ui/home_screen.dart';
+import 'package:flutter_app_fiap/screens/login/ui/login_screen.dart';
 import 'package:flutter_app_fiap/screens/register/ui/register_screen.dart';
-import 'package:flutter_app_fiap/screens/splash/ui/splash_screen.dart';
+import 'package:flutter_app_fiap/screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashScreen.id: (context) => const SplashScreen(),
         HomeScreen.id: (context) => const HomeScreen(),
-        RegisterScreen.id: (context) => const RegisterScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
+        RegisterScreen.id: (context) => RegisterScreen(),
       },
     );
   }

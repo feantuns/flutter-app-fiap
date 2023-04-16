@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_fiap/screens/login/ui/login_screen.dart';
+import 'package:flutter_app_fiap/screens/register/ui/register_screen.dart';
 import 'package:flutter_app_fiap/widgets/styled_text_field.dart';
 
-class RegisterScreen extends StatelessWidget {
-  static const String id = '/register_screen';
+class LoginScreen extends StatelessWidget {
+  static const String id = '/login_screen';
 
-  RegisterScreen({
+  LoginScreen({
     super.key,
   });
 
   var inputtedEmail = '';
   var inputtedPassword = '';
-  var inputtedConfirmPassword = '';
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +31,7 @@ class RegisterScreen extends StatelessWidget {
                     const SizedBox(
                       width: double.infinity,
                       child: Text(
-                        'Cadastre-se',
+                        'Entre',
                         style: TextStyle(
                           fontSize: 36,
                         ),
@@ -42,14 +41,14 @@ class RegisterScreen extends StatelessWidget {
                         width: double.infinity,
                         child: Row(
                           children: [
-                            const Text('Já tem uma conta?',
+                            const Text('Ainda não tem uma conta?',
                                 style: TextStyle(
                                   color: Colors.grey,
                                 )),
                             TextButton(
                                 onPressed: () => Navigator.pushReplacementNamed(
-                                    context, LoginScreen.id),
-                                child: const Text('Entrar'))
+                                    context, RegisterScreen.id),
+                                child: const Text('Criar conta'))
                           ],
                         )),
                     const SizedBox(height: 40),
@@ -64,16 +63,10 @@ class RegisterScreen extends StatelessWidget {
                       obscureText: true,
                       onTextChange: (text) => inputtedPassword = text,
                     ),
-                    const SizedBox(height: 16),
-                    FilledTextField(
-                      label: 'Confirmar senha',
-                      obscureText: true,
-                      onTextChange: (text) => inputtedConfirmPassword = text,
-                    ),
                     const SizedBox(height: 32),
                     ElevatedButton(
                       onPressed: () => print("oi"),
-                      child: Text('Criar conta'),
+                      child: Text('Entrar'),
                       style: ButtonStyle(
                         minimumSize: MaterialStateProperty.all(
                             const Size.fromHeight(50)),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fiap/screens/home/ui/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_app_fiap/screens/register/ui/register_screen.dart';
+import 'package:flutter_app_fiap/screens/login/ui/login_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   static const String id = '/splash_screen';
@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
       initialData: FirebaseAuth.instance.currentUser,
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const RegisterScreen();
+          return LoginScreen();
         }
 
         return const HomeScreen();
