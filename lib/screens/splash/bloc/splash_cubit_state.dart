@@ -1,0 +1,3 @@
+class SplashCubitState {
+  const SplashCubitState();
+}

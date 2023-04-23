@@ -5,13 +5,18 @@ import 'package:flutter_app_fiap/widgets/styled_text_field.dart';
 class RegisterScreen extends StatelessWidget {
   static const String id = '/register_screen';
 
-  RegisterScreen({
+  const RegisterScreen({
     super.key,
+    required this.onChangeText,
+    required this.onSubmit,
   });
 
-  var inputtedEmail = '';
-  var inputtedPassword = '';
-  var inputtedConfirmPassword = '';
+  final Function({
+    String? email,
+    String? password,
+    String? confirmPassword,
+  }) onChangeText;
+  final Function() onSubmit;
 
   @override
   Widget build(BuildContext context) {
@@ -56,23 +61,24 @@ class RegisterScreen extends StatelessWidget {
                     FilledTextField(
                       label: 'Email',
                       textInputType: TextInputType.emailAddress,
-                      onTextChange: (text) => inputtedEmail = text,
+                      onTextChange: (text) => onChangeText(email: text),
                     ),
                     const SizedBox(height: 16),
                     FilledTextField(
                       label: 'Senha',
                       obscureText: true,
-                      onTextChange: (text) => inputtedPassword = text,
+                      onTextChange: (text) => onChangeText(password: text),
                     ),
                     const SizedBox(height: 16),
                     FilledTextField(
                       label: 'Confirmar senha',
                       obscureText: true,
-                      onTextChange: (text) => inputtedConfirmPassword = text,
+                      onTextChange: (text) =>
+                          onChangeText(confirmPassword: text),
                     ),
                     const SizedBox(height: 32),
                     ElevatedButton(
-                      onPressed: () => print("oi"),
+                      onPressed: onSubmit,
                       child: Text('Criar conta'),
                       style: ButtonStyle(
                         minimumSize: MaterialStateProperty.all(

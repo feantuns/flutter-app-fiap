@@ -1,0 +1,3 @@
+class HomeCubitState {
+  const HomeCubitState();
+}

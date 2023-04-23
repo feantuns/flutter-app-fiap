@@ -5,12 +5,17 @@ import 'package:flutter_app_fiap/widgets/styled_text_field.dart';
 class LoginScreen extends StatelessWidget {
   static const String id = '/login_screen';
 
-  LoginScreen({
+  const LoginScreen({
     super.key,
+    required this.onChangeText,
+    required this.onSubmit,
   });
 
-  var inputtedEmail = '';
-  var inputtedPassword = '';
+  final Function({
+    String? email,
+    String? password,
+  }) onChangeText;
+  final Function() onSubmit;
 
   @override
   Widget build(BuildContext context) {
@@ -55,17 +60,17 @@ class LoginScreen extends StatelessWidget {
                     FilledTextField(
                       label: 'Email',
                       textInputType: TextInputType.emailAddress,
-                      onTextChange: (text) => inputtedEmail = text,
+                      onTextChange: (text) => onChangeText(email: text),
                     ),
                     const SizedBox(height: 16),
                     FilledTextField(
                       label: 'Senha',
                       obscureText: true,
-                      onTextChange: (text) => inputtedPassword = text,
+                      onTextChange: (text) => onChangeText(password: text),
                     ),
                     const SizedBox(height: 32),
                     ElevatedButton(
-                      onPressed: () => print("oi"),
+                      onPressed: onSubmit,
                       child: Text('Entrar'),
                       style: ButtonStyle(
                         minimumSize: MaterialStateProperty.all(
