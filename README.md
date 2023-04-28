@@ -1,16 +1,13 @@
-# flutter_app_fiap
+# Open Books
 
-A new Flutter project.
+Um aplicativo em Flutter para listar livros abertos do projeto [Gutenberg](https://gutendex.com/).
 
-## Getting Started
+## Início
 
-This project is a starting point for a Flutter application.
+Não é necessário nenhum procedimento extra para executar o aplicativo.
 
-A few resources to get you started if this is your first Flutter project:
+O aplicativo tem tela de login e cadastro integradas com o Firebase e carrega os livros a partir da API https://gutendex.com/
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Layout
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Captura de Tela 2023-04-27 às 23 21 00](https://user-images.githubusercontent.com/33201697/235039101-4f6a6891-937b-44dc-8e26-856b26cc9164.png)
