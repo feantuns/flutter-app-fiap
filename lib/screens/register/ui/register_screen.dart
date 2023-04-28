@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fiap/screens/login/ui/login_screen.dart';
-import 'package:flutter_app_fiap/widgets/styled_text_field.dart';
+import 'package:flutter_app_fiap/widgets/filled_text_field.dart';
 
 class RegisterScreen extends StatelessWidget {
   static const String id = '/register_screen';

@@ -1,11 +1,24 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fiap/screens/home/bloc/home_cubit_state.dart';
+import 'package:flutter_app_fiap/screens/home/data/use_cases/remote_fetch_books.dart';
+import 'package:flutter_app_fiap/screens/home/domain/entities/book_topics_entity.dart';
+import 'package:flutter_app_fiap/screens/home/domain/use_cases/fetch_books.dart';
 import 'package:flutter_app_fiap/screens/login/ui/login_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeCubit extends Cubit<HomeCubitState> {
-  HomeCubit(super.initialState);
+  HomeCubit(
+    super.initialState, {
+    required this.fetchBooks,
+  });
+
+  FetchBooks fetchBooks;
+
+  Future<void> fetch() async {
+    final bookByTopics = await fetchBooks.execute();
+    emit(state.copyWith(bookByTopics: bookByTopics));
+  }
 
   void logout(BuildContext context) {
     final firebaseAuth = FirebaseAuth.instance;
@@ -31,8 +44,15 @@ class HomeCubitProvider extends BlocProvider<HomeCubit> {
       : super(
           key: key,
           create: (context) => HomeCubit(
-            const HomeCubitState(),
-          ),
+            const HomeCubitState(
+              bookByTopics: BookTopicsEntity(
+                romance: [],
+                poetry: [],
+                children: [],
+              ),
+            ),
+            fetchBooks: RemoteFetchBooks(),
+          )..fetch(),
           child: child,
         );
 

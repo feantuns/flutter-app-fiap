@@ -10,6 +10,7 @@ class HomeContainer extends BlocBuilder<HomeCubit, HomeCubitState> {
             onLogout: () {
               HomeCubitProvider.of(context).logout(context);
             },
+            bookTopics: state.bookByTopics,
           );
         });
 }
